@@ -1,0 +1,22 @@
+{
+  "name": "sentinelx-contracts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:chainA": "hardhat run deploy/deployVault.js --network chainA",
+    "deploy:chainB": "hardhat run deploy/deployExecutor.js --network chainB"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@chainlink/contracts": "^1.0.2",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@openzeppelin/contracts": "^5.0.0",
+    "@tenderly/hardhat-tenderly": "^2.5.2",
+    "hardhat": "^2.28.0"
+  }
+}

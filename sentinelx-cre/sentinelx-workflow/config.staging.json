@@ -1,0 +1,24 @@
+{
+  "schedule": "*/1 * * * * *",
+  "chainA": {
+    "selector": 50001,
+    "vaults": [
+      "0x55fb5b13b26A231De9ee15E32E5f421009888d71"
+    ],
+    "guardian": "0x88c5def11a9f5d036320e9240d901dFcf06C2840",
+    "stable": "0x75737d6E17bF2D4BB91448FA752333603deeC33F",
+    "authority": "0xF714bc87EB5c9DBec59e109004c083EB060b477e"
+  },
+  "chainB": {
+    "selector": 50002,
+    "executor": "0x25546EE6250A8B74dB6C0BA5739d1EF7eB8e1d9A"
+  },
+  "custodians": [
+    {
+      "name": "CustodianA",
+      "endpoint": "http://localhost:3001/reserve",
+      "publicKey": "0x19dA5848Cb4340Ccf04464eFDB24B704D7e5f5a5"
+    }
+  ],
+  "quorum": 1
+}

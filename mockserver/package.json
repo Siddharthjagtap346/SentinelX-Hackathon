@@ -1,0 +1,26 @@
+{
+  "name": "sentinelx-cre",
+  "version": "1.0.0",
+  "description": "CRE workflow project with mock price server",
+  "main": "index.js",
+  "scripts": {
+    "start:mock": "ts-node mockserver/server.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "author": "Siddharth Jagtap",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "ethers": "^6.16.0",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.5.6",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
