@@ -51,27 +51,7 @@ SentinelX introduces:
 
 # 🏗 High-Level Architecture
 
-```
-                ┌───────────────────────────┐
-                │      External Data        │
-                │---------------------------│
-                │ CoinGecko (ETH price)     │
-                │ Custodian Signed Reserve  │
-                │ Controlled Price Feed     │
-                └──────────────┬────────────┘
-                               │
-                        Chainlink CRE
-                               │
-        ┌──────────────────────┴──────────────────────┐
-        │                                             │
-   Chain A                                      Chain B
- (Vault Layer)                              (Execution Layer)
-
-  RiskVault.sol                               RiskExecutor.sol
-  GlobalGuardian.sol                           Cross-chain logic
-  StableCoin (sUSD)                            Replay protection
-  ReserveAuthority.sol                         Nonce enforcement
-```
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/af664147-7b73-49e1-90bd-60196f695317" />
 
 ---
 
