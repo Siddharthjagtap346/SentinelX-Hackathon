@@ -971,5 +971,3 @@ Chainlink Convergence Hackathon 2026 submission
 ## 📄 License
 
 MIT © 2026 Siddharth Jagtap.
-
----
