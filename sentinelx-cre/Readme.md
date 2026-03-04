@@ -21,7 +21,7 @@ It is a full cross-chain autonomous risk engine.
 
 ---
 
-## 🔎 Logs & Scenario Demonstrations
+## 🔎 Full System Context
 
 This directory documents the internal CRE engine only.
 
@@ -362,6 +362,7 @@ This transforms reserve monitoring into automated enforcement.
 # Logs & Scenario Demonstrations
 
 Full execution logs and Scene 1–4 crash simulations are documented in the root project README.
+➡ **[View Main SentinelX README](https://github.com/Siddharthjagtap346/SentinelX-Hackathon/blob/main/README.md#-scene-1--normal-market-conditions-stable-system)**
 
 ---
 
