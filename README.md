@@ -491,7 +491,7 @@ testnets
 * Cross-chain liquidation
 * Nonce enforcement logs
 
-**🔗 Live Demo:** [View SentinelX Dashboard](https://vimeo.com/1169956509)
+**🔗 Live Demo:** [View SentinelX live Demo](https://vimeo.com/1169956509)
 
 ---
 
