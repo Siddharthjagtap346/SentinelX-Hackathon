@@ -410,22 +410,116 @@ This demonstrates real-world crash response modeling.
 
 # 🧪 Tenderly Execution Validation
 
-SentinelX was validated using Tenderly forked testnets to simulate real-world cross-chain behavior.
+SentinelX was validated using forked testnets on **Tenderly** to simulate real-world cross-chain execution, contract enforcement, and transaction tracing.
 
-### 📌 Include Screenshots Of:
+This demonstrates:
 
-chainA
-<img width="1763" height="1455" alt="image" src="https://github.com/user-attachments/assets/54df0f5e-7cf2-455e-9e90-5e76e7e3f268" />
+* Real contract deployment on both chains
+* Cross-chain execution via RiskExecutor
+* Nonce enforcement & replay protection
+* Global pause mechanism
+* Deterministic state transitions
 
-contracts on chainA
-<img width="1763" height="847" alt="image" src="https://github.com/user-attachments/assets/052b1338-7127-40c0-ace8-b91ebbd81597" />
+---
 
-chainB
-<img width="1763" height="1010" alt="image" src="https://github.com/user-attachments/assets/e6ff7667-d1b1-4a80-93ff-f3acf40ecf71" />
+# 🔗 Chain Architecture Overview
 
-contracts on chainB
-<img width="1763" height="847" alt="image" src="https://github.com/user-attachments/assets/68eefc6e-b3c8-4ae9-bbd7-323d1166ea7b" />
+SentinelX operates across two independent EVM chains:
 
+| Chain      | Role            | Purpose                                                     |
+| ---------- | --------------- | ----------------------------------------------------------- |
+| 🟢 Chain A | Vault Layer     | Asset storage, reserve enforcement, system freeze authority |
+| 🔵 Chain B | Execution Layer | Cross-chain liquidation executor, replay protection         |
+
+---
+
+# 🟢 Chain A — Vault & Reserve Enforcement Layer
+
+### 📜 Contracts Deployed on Chain A
+
+* `GlobalGuardian.sol` → Global circuit breaker
+* `RiskVault.sol` → Vault health & liquidation state machine
+* `MockStableCoin (sUSD)` → ERC20 stablecoin
+* `SentinelXReserveAuthority.sol` → DON-signed Proof-of-Reserve enforcement
+
+---
+
+### 📸 Chain A — Network Environment
+
+<img width="1763" height="1455" alt="ChainA Network" src="https://github.com/user-attachments/assets/54df0f5e-7cf2-455e-9e90-5e76e7e3f268" />
+
+**What This Shows:**
+
+* Forked EVM environment
+* Active chain simulation
+* Deployed contract environment
+
+---
+
+### 📸 Contracts Deployed on Chain A
+
+<img width="1763" height="847" alt="ChainA Contracts" src="https://github.com/user-attachments/assets/052b1338-7127-40c0-ace8-b91ebbd81597" />
+
+**What This Proves:**
+
+* All Vault-layer contracts deployed successfully
+* Guardian + ReserveAuthority live
+* Stablecoin supply tracked on-chain
+* System pause state verifiable
+
+---
+
+# 🔵 Chain B — Cross-Chain Execution Layer
+
+### 📜 Contracts Deployed on Chain B
+
+* `RiskExecutor.sol` → Cross-chain enforcement engine
+* Nonce validation storage
+* Approved vault registry
+* Replay protection mapping
+* Escalation enforcement logic
+
+Chain B only executes actions authorized by CRE and verified by nonce sequencing.
+
+---
+
+### 📸 Chain B — Network Environment
+
+<img width="1763" height="1010" alt="ChainB Network" src="https://github.com/user-attachments/assets/e6ff7667-d1b1-4a80-93ff-f3acf40ecf71" />
+
+**What This Shows:**
+
+* Independent execution chain
+* Isolated enforcement layer
+* Cross-chain separation of concerns
+
+---
+
+### 📸 Contracts Deployed on Chain B
+
+<img width="1763" height="847" alt="ChainB Contracts" src="https://github.com/user-attachments/assets/68eefc6e-b3c8-4ae9-bbd7-323d1166ea7b" />
+
+**What This Shows:**
+
+* RiskExecutor successfully deployed
+* Nonce tracking storage initialized
+* Cross-chain executor live
+* Replay protection enforced
+
+---
+
+# 🔐 Cross-Chain Enforcement Proof
+
+Using Tenderly transaction tracing we validated:
+
+* FREEZE execution calls
+* Escalation tier transitions
+* Nonce increment correctness
+* Cross-chain message hashing
+* Guardian.pause() invocation
+* Report submission to ReserveAuthority
+
+All state changes were verified through debug trace inspection.
 
 ---
 
