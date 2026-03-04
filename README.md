@@ -268,6 +268,10 @@ We use:
 
 Demonstrates real mainnet-like behavior.
 
+testnets 
+<img width="1763" height="847" alt="image" src="https://github.com/user-attachments/assets/a566db9d-6be7-4171-b002-0276a90ac33b" />
+
+
 ---
 
 # 🎥 Demo Includes
@@ -282,6 +286,170 @@ Demonstrates real mainnet-like behavior.
 * Nonce enforcement logs
 
 ---
+
+# 🔬 CRE Workflow Simulation Scenarios (Execution Proof)
+
+Below are real CRE simulation outputs demonstrating SentinelX autonomous enforcement behavior under multiple market conditions.
+
+Command used in all scenarios:
+
+```bash
+cre workflow simulate ./sentinelx-workflow --target staging-settings --broadcast
+```
+
+---
+
+## 🟢 Scene 1 — Normal Market Conditions (Stable System)
+
+### 🎯 Expected Behavior
+
+* Price consensus succeeds
+* Reserve health > 95%
+* Risk score low
+* No freeze
+* System remains stable
+* PoR report successfully submitted
+
+### 📟 Output Snapshot
+
+<img width="1920" height="1080" alt="scene1" src="https://github.com/user-attachments/assets/798fa492-f3f9-478b-a743-66643131a8f9" />
+
+
+
+### 🧠 What This Proves
+
+* Real + controlled price feeds converge correctly
+* Risk engine calculates systemic score
+* PoR report is generated and signed
+* No global pause triggered
+* Autonomous execution cycle completes successfully
+
+---
+
+## 🟡 Scene 2 — Price Manipulation Attempt (Consensus Deviation)
+
+### 🎯 Expected Behavior
+
+* Large deviation detected
+* Consensus rejected
+* System logs warning
+* Continues in test mode (controlled execution)
+* No freeze since reserve health acceptable
+
+### 📟 Output Snapshot
+
+<img width="1472" height="897" alt="scene2" src="https://github.com/user-attachments/assets/62295967-b455-48e0-9753-4f6f565470e2" />
+
+
+### 🧠 What This Proves
+
+* Median consensus logic detects manipulation
+* Deviation threshold enforcement works
+* System does not blindly trust one price feed
+* Execution pipeline continues safely
+
+---
+
+## 🔴 Scene 3 — Reserve Breach → Autonomous Freeze
+
+### 🎯 Expected Behavior
+
+* Reserve health drops to 85%
+* EMERGENCY triggered
+* Global freeze executed
+* Cross-chain executor invoked
+* Nonce verification enforced
+* DON report submitted
+
+### 📟 Output Snapshot
+
+<img width="1487" height="905" alt="scene3" src="https://github.com/user-attachments/assets/bafba381-77e8-416d-9a3a-4db2d21d323f" />
+
+### 🧠 What This Proves
+
+* Proof-of-Reserve failure automatically triggers freeze
+* GlobalGuardian.pause() executed
+* Cross-chain execution enforced via RiskExecutor
+* Nonce + replay protection validated
+* Fully autonomous system shutdown
+
+This is infrastructure-grade enforcement logic.
+
+---
+
+## 🔵 Scene 4 — Controlled Market Crash Escalation Ladder
+
+### 🎯 Expected Behavior
+
+Gradual crash triggers escalation tiers:
+
+1. WARNING
+2. RESTRICT
+3. PARTIAL
+4. Potential FULL (if threshold crossed)
+
+### 📟 Output Snapshot
+
+<img width="1920" height="1080" alt="Screenshot 2026-03-02 155220" src="https://github.com/user-attachments/assets/74e964eb-d4d0-4301-acd4-c3d3a1ce4d1a" />
+
+<img width="1920" height="1080" alt="Screenshot 2026-03-02 155249" src="https://github.com/user-attachments/assets/841935bf-c7d1-4012-9586-46b2d896c1e7" />
+
+
+
+### 🧠 What This Proves
+
+* Multi-stage liquidation logic works
+* Escalation state machine enforced
+* Nonce sequencing validated
+* Cross-chain message integrity preserved
+* Policy reacts progressively — not abruptly
+
+This demonstrates real-world crash response modeling.
+
+---
+
+# 🧪 Tenderly Execution Validation
+
+SentinelX was validated using Tenderly forked testnets to simulate real-world cross-chain behavior.
+
+### 📌 Include Screenshots Of:
+
+chainA
+<img width="1763" height="1455" alt="image" src="https://github.com/user-attachments/assets/54df0f5e-7cf2-455e-9e90-5e76e7e3f268" />
+
+contracts on chainA
+<img width="1763" height="847" alt="image" src="https://github.com/user-attachments/assets/052b1338-7127-40c0-ace8-b91ebbd81597" />
+
+chainB
+<img width="1763" height="1010" alt="image" src="https://github.com/user-attachments/assets/e6ff7667-d1b1-4a80-93ff-f3acf40ecf71" />
+
+contracts on chainB
+<img width="1763" height="847" alt="image" src="https://github.com/user-attachments/assets/68eefc6e-b3c8-4ae9-bbd7-323d1166ea7b" />
+
+
+---
+
+### 🖼 Screenshot Placement Format
+
+Use this format in README:
+
+```markdown
+### 🔹 Global Freeze Transaction (Tenderly)
+
+![Freeze Execution](./screenshots/freeze-transaction.png)
+
+Shows RiskExecutor executing FREEZE with correct nonce validation.
+```
+
+Repeat for:
+
+* `guardian-paused.png`
+* `nonce-verification.png`
+* `cross-chain-call.png`
+* `report-submission.png`
+
+---
+
 
 # 🏆 Prize Track Justification
 
