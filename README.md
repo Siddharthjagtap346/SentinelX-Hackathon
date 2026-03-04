@@ -1,8 +1,6 @@
 # 🛡 SentinelX
 
-### Autonomous Cross-Chain Risk & Reserve Enforcement Engine Powered by Chainlink CRE ![8 -Chainlink](https://github.com/user-attachments/assets/e8f755c7-258d-4db6-af99-85a2472f8122)
-
-
+### Autonomous Cross-Chain Risk & Reserve Enforcement Engine Powered by Chainlink CRE   <img src="https://github.com/user-attachments/assets/e8f755c7-258d-4db6-af99-85a2472f8122" alt="Chainlink Logo" width="100" style="float:right; margin-left:25px;">
 ---
 
 SentinelX Hackathon Submission – Multi-chain Smart Contracts, CRE workflow automation, Proof-of-reserve feed and demo scripts demonstrating real-time monitoring, triggers, and convergence across blockchain environments for SentinelX Convergence Hackathon 2026.
