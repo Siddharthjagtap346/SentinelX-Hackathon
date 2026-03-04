@@ -364,6 +364,123 @@ This transforms reserve monitoring into automated enforcement.
 Full execution logs and Scene 1–4 crash simulations are documented in the root project README.
 ➡ **[View Main SentinelX README](https://github.com/Siddharthjagtap346/SentinelX-Hackathon/blob/main/README.md#-scene-1--normal-market-conditions-stable-system)**
 
+Below are real CRE simulation outputs demonstrating SentinelX autonomous enforcement behavior under multiple market conditions.
+
+Command used in all scenarios:
+
+```bash
+cre workflow simulate ./sentinelx-workflow --target staging-settings --broadcast
+```
+
+---
+
+## 🟢 Scene 1 — Normal Market Conditions (Stable System)
+
+### 🎯 Expected Behavior
+
+* Price consensus succeeds
+* Reserve health > 95%
+* Risk score low
+* No freeze
+* System remains stable
+* PoR report successfully submitted
+
+### 📟 Output Snapshot
+
+<img width="1920" height="1080" alt="scene1" src="https://github.com/user-attachments/assets/798fa492-f3f9-478b-a743-66643131a8f9" />
+
+
+
+### 🧠 What This Proves
+
+* Real + controlled price feeds converge correctly
+* Risk engine calculates systemic score
+* PoR report is generated and signed
+* No global pause triggered
+* Autonomous execution cycle completes successfully
+
+---
+
+## 🟡 Scene 2 — Price Manipulation Attempt (Consensus Deviation)
+
+### 🎯 Expected Behavior
+
+* Large deviation detected
+* Consensus rejected
+* System logs warning
+* Continues in test mode (controlled execution)
+* No freeze since reserve health acceptable
+
+### 📟 Output Snapshot
+
+<img width="1472" height="897" alt="scene2" src="https://github.com/user-attachments/assets/62295967-b455-48e0-9753-4f6f565470e2" />
+
+
+### 🧠 What This Proves
+
+* Median consensus logic detects manipulation
+* Deviation threshold enforcement works
+* System does not blindly trust one price feed
+* Execution pipeline continues safely
+
+---
+
+## 🔴 Scene 3 — Reserve Breach → Autonomous Freeze
+
+### 🎯 Expected Behavior
+
+* Reserve health drops to 85%
+* EMERGENCY triggered
+* Global freeze executed
+* Cross-chain executor invoked
+* Nonce verification enforced
+* DON report submitted
+
+### 📟 Output Snapshot
+
+<img width="1487" height="905" alt="scene3" src="https://github.com/user-attachments/assets/bafba381-77e8-416d-9a3a-4db2d21d323f" />
+
+### 🧠 What This Proves
+
+* Proof-of-Reserve failure automatically triggers freeze
+* GlobalGuardian.pause() executed
+* Cross-chain execution enforced via RiskExecutor
+* Nonce + replay protection validated
+* Fully autonomous system shutdown
+
+This is infrastructure-grade enforcement logic.
+
+---
+
+## 🔵 Scene 4 — Controlled Market Crash Escalation Ladder
+
+### 🎯 Expected Behavior
+
+Gradual crash triggers escalation tiers:
+
+1. WARNING
+2. RESTRICT
+3. PARTIAL
+4. Potential FULL (if threshold crossed)
+
+### 📟 Output Snapshot
+
+<img width="1920" height="1080" alt="Screenshot 2026-03-02 155220" src="https://github.com/user-attachments/assets/74e964eb-d4d0-4301-acd4-c3d3a1ce4d1a" />
+
+<img width="1920" height="1080" alt="Screenshot 2026-03-02 155249" src="https://github.com/user-attachments/assets/841935bf-c7d1-4012-9586-46b2d896c1e7" />
+
+
+
+### 🧠 What This Proves
+
+* Multi-stage liquidation logic works
+* Escalation state machine enforced
+* Nonce sequencing validated
+* Cross-chain message integrity preserved
+* Policy reacts progressively — not abruptly
+
+This demonstrates real-world crash response modeling.
+
 ---
 
 # Conclusion
