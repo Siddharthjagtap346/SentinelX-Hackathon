@@ -491,6 +491,8 @@ testnets
 * Cross-chain liquidation
 * Nonce enforcement logs
 
+**🔗 Live Demo:** [View SentinelX Dashboard](https://vimeo.com/1169956509)
+
 ---
 
 # 🔬 CRE Workflow Simulation Scenarios (Execution Proof)
@@ -962,6 +964,12 @@ This is infrastructure-level innovation.
 
 Siddharth Jagtap
 Solo Builder
-Chainlink Convergence Hackathon 2026
+Chainlink Convergence Hackathon 2026 submission
+
+---
+
+## 📄 License
+
+MIT © 2026 Siddharth Jagtap.
 
 ---
