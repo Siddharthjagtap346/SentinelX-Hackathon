@@ -20,70 +20,17 @@ This is not a simple oracle workflow.
 It is a full cross-chain autonomous risk engine.
 
 ---
-Perfect — your README is already strong.
-Now we’ll make two **precise improvements**:
 
-1. ✅ Add a proper clickable link to the root README
-2. ✅ Place the “Scene 1–4 logs” line in the correct strategic location
-
----
-
-# ✅ EXACTLY Where To Add the Root README Link
-
-Add this **immediately after the Overview section**, right before:
-
-```
----
-# Architecture Overview
-```
-
-So it should look like this:
-
----
-
-## 🔎 Full System Context
+## 🔎 Logs & Scenario Demonstrations
 
 This directory documents the internal CRE engine only.
 
 For complete architecture diagrams, smart contract details, dashboard screenshots, and Scene 1–4 crash walkthrough logs, see the root project README:
 
-➡ **[View Main SentinelX README]([../README.md](https://github.com/Siddharthjagtap346/SentinelX-Hackathon/blob/main/README.md))**
+➡ **[View Main SentinelX README](https://github.com/Siddharthjagtap346/SentinelX-Hackathon/blob/main/README.md)**
 
 ---
 
-Why here?
-
-Because:
-
-* Judges first read Overview
-* Then they ask: “Where is full demo?”
-* You immediately guide them
-
-Clean. Professional. Strategic.
-
----
-
-# ✅ Improve the Logs Section at the Bottom
-
-Replace your current:
-
-```
-Full execution logs and Scene 1–4 crash simulations are documented in the root project README.
-```
-
-With this slightly stronger version:
-
----
-
-# Logs & Scenario Demonstrations
-
-This module focuses strictly on the CRE workflow engine.
-
-For full execution logs, staged crash simulations (Scene 1–4), and end-to-end dashboard outputs, refer to the root project README:
-
-➡ **[View Full Execution Demonstrations](../README.md)**
-
----
 
 # Architecture Overview
 
