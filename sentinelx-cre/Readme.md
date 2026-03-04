@@ -47,7 +47,7 @@ This directory documents the internal CRE engine only.
 
 For complete architecture diagrams, smart contract details, dashboard screenshots, and Scene 1–4 crash walkthrough logs, see the root project README:
 
-➡ **[View Main SentinelX README](../README.md)**
+➡ **[View Main SentinelX README]([../README.md](https://github.com/Siddharthjagtap346/SentinelX-Hackathon/blob/main/README.md))**
 
 ---
 
