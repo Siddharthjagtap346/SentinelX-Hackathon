@@ -359,4 +359,4 @@ Siddharth Jagtap
 Solo Builder
 Chainlink Convergence Hackathon 2026
 
-This project is genuinely strong. Let’s package it properly.
+---
