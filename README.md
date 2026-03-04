@@ -225,6 +225,132 @@ ERC20 stablecoin.
 
 ---
 
+# 🚀 On-Chain Deployment — Command & Output Proof
+
+Smart contracts were deployed using **Hardhat** across two independent EVM chains.
+
+---
+
+# 🟢 Chain A — Vault & Reserve Layer
+
+### 🔧 Deployment Command
+
+```bash
+npx hardhat run scripts/deploy-chainA.js --network chainA
+```
+
+---
+
+### ✅ Deployment Output
+
+```bash
+Deploying contracts with account: 0xC279A8Cfd5dB046F52997eA46D9B85d451559500
+
+GlobalGuardian deployed to: 0x88c5def11a9f5d036320e9240d901dFcf06C2840
+
+MockStableCoin (sUSD) deployed to: 0x75737d6E17bF2D4BB91448FA752333603deeC33F
+Minted 1,000,000 sUSD to deployer
+
+RiskVault deployed to: 0x55fb5b13b26A231De9ee15E32E5f421009888d71
+
+SentinelXReserveAuthority deployed to: 0xF714bc87EB5c9DBec59e109004c083EB060b477e
+Guardian ownership transferred to ReserveAuthority
+Stable ownership transferred to Authority
+
+Deployment complete.
+
+```
+
+---
+
+### 🔗 Post-Deployment Configuration Commands
+
+```bash
+npx hardhat run scripts/configure-chainA.js --network chainA
+```
+
+### ✅ Configuration Output
+
+```bash
+Transferring Guardian ownership...
+✔ Ownership transferred
+
+Linking Vault → Guardian
+cmd -
+const vault = await ethers.getContractAt("RiskVault", "0x55fb5b13b26A231De9ee15E32E5f421009888d71")
+await vault.setGuardian("0x88c5def11a9f5d036320e9240d901dFcf06C2840")
+
+Tx: 0xdaa8b799a5348fa2935478d949e00b193756b8c3ef01861f4c4f52030874910a
+
+
+Linking Vault → RiskEngine
+cmd - await vault.setRiskEngine("0xe744BF1b2F108E3bA3CAF893c4f7e41352C46008")
+Tx: 0x7b00727d5081cfb0a6423bd01462c2a8f8a160e4013fc716128247bf3b65897a
+
+Block: 10360765
+ChainId: 17371
+
+Configuration complete.
+```
+
+---
+
+# 🔵 Chain B — Cross-Chain Execution Layer
+
+### 🔧 Deployment Command
+
+```bash
+npx hardhat run scripts/deploy-chainB.js --network chainB
+```
+
+---
+
+### ✅ Deployment Output
+
+```bash
+Deploying RiskExecutor with account: 0xe744BF1b2F108E3bA3CAF893c4f7e41352C46008
+
+RiskExecutor deployed to: 0x25546EE6250A8B74dB6C0BA5739d1EF7eB8e1d9A
+
+Deployment complete.
+```
+
+---
+
+### 🔗 Executor Configuration Command
+
+```bash
+npx hardhat run scripts/configure-chainB.js --network chainB
+```
+
+---
+
+### ✅ Configuration Output
+
+```bash
+Setting RiskEngine...
+cmd -
+const executor = await ethers.getContractAt("RiskExecutor", "0x25546EE6250A8B74dB6C0BA5739d1EF7eB8e1d9A")
+await executor.setRiskEngine("0xe744BF1b2F108E3bA3CAF893c4f7e41352C46008")
+Tx: 0x558a64176ca210532dcd33ca9ee0edaa7d59f4b586218460b49d6bf3604376e1
+
+Setting Guardian...
+cmd - await executor.setGuardian("0x88c5def11a9f5d036320e9240d901dFcf06C2840")
+Tx: 0x4f30bf46068b861d76a78ce9ce320e0daeb739a304e50d70b39f97cc0042103e
+
+Block: 10360764
+ChainId: 17372
+
+Whitelisting Vault...
+cmd - await executor.addVault("0x55fb5b13b26A231De9ee15E32E5f421009888d71")
+Tx: 0x3694042aa93ed1345e78d77208bbfc03ee0a390431f43aa9a765721d3f71ec2a
+
+Executor configuration complete.
+```
+
+---
+
+
 # 🔄 CRE Workflow Components
 
 * Cron trigger
