@@ -1,6 +1,7 @@
 # 🛡 SentinelX
 
-### Autonomous Cross-Chain Risk & Reserve Enforcement Engine Powered by ![Chainlink Logo](<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/8872cf4a-dcbf-4f50-8d89-dda4767e644e" />) Chainlink CRE
+### Autonomous Cross-Chain Risk & Reserve Enforcement Engine Powered by Chainlink CRE ![8 -Chainlink](https://github.com/user-attachments/assets/e8f755c7-258d-4db6-af99-85a2472f8122)
+
 
 ---
 
