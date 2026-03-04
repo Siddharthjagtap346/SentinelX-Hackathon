@@ -962,9 +962,7 @@ This is infrastructure-level innovation.
 
 # 👤 Built By
 
-* Siddharth Jagtap
-* Solo Builder
-* Chainlink Convergence Hackathon 2026 submission
+Siddharth Jagtap - Solo Builder , Chainlink Convergence Hackathon 2026 submission
 
 ---
 
